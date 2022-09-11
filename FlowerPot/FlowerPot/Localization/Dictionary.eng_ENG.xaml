@@ -1,0 +1,152 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:FlowerPot" xmlns:v="clr-namespace:System;assembly=mscorlib">
+    <!--ЗАГОЛОЛОВКИ-->
+    <v:String x:Key="Auth">AUTHORIZATION</v:String>
+    <v:String x:Key="Reg">REGISTRATION</v:String>
+    <v:String x:Key="Catalog">CATALOG</v:String>
+    <v:String x:Key="Orders">ORDERS</v:String>
+    <v:String x:Key="About">ABOUT</v:String>
+    <v:String x:Key="Admin">CONTROL</v:String>
+    <v:String x:Key="Users">USERS</v:String>
+    <v:String x:Key="PROFILE">ACCOUNT</v:String>
+    <v:String x:Key="Basket">CART</v:String>
+    <v:String x:Key="Payment">CONFIRMATION OF AN ORDER</v:String>
+
+    <!--РЕГИСТРАЦИЯ/АВТОРИЗАЦИЯ-->
+    <v:String x:Key="Login">Login:</v:String>
+    <v:String x:Key="Password">Password:</v:String>
+    <v:String x:Key="repeatPassword">Repeat password:</v:String>
+    <v:String x:Key="Lastname">Lastname:</v:String>
+    <v:String x:Key="Name">Name:</v:String>
+    <v:String x:Key="Surname">Surname:</v:String>
+    <v:String x:Key="PhoneNum">Phone number:</v:String>
+    <v:String x:Key="Mail">E-mail:</v:String>
+    <v:String x:Key="ConfirmReg">Register?</v:String>
+
+    <v:String x:Key="NotReg">Not registered yet?</v:String>
+    <v:String x:Key="AlreadyReg">Already registered?</v:String>
+    
+    <!--КОНТЕКСТНОЕ БОКОВОЕ МЕНЮ-->
+    <v:String x:Key="IN">LogIn</v:String>
+    <v:String x:Key="OUT">LogOut</v:String>
+    <v:String x:Key="SETTINGS">SETTINGS</v:String>
+    <v:String x:Key="CLOSE">Close</v:String>
+
+    <!--КОРЗИНА-->
+    <v:String x:Key="numOrder">Number</v:String>
+    <v:String x:Key="nameFlower">Name</v:String>
+    <v:String x:Key="countOrder">Count</v:String>
+    <v:String x:Key="priceOrder">Price</v:String>
+    <v:String x:Key="date">Date</v:String>
+    <v:String x:Key="orderStatus">Status</v:String>
+
+
+    <v:String x:Key="ADD">Add</v:String>
+    <v:String x:Key="CHANGE">Change</v:String>
+    <v:String x:Key="DEL">Delete</v:String>
+    <v:String x:Key="CLEAR">Clear</v:String>
+    <v:String x:Key="SORT">Sort</v:String>
+    <v:String x:Key="SEARCH">Search</v:String>
+    <v:String x:Key="CONF">Confirm</v:String>
+
+    <!--ОПЛАТА-->
+    <v:String x:Key="Sum">Amount of money:</v:String>
+    <v:String x:Key="deliveryPrice">Delivery price:</v:String>
+    <v:String x:Key="productPrice">Product price:</v:String>
+    <v:String x:Key="totalPayable">Total price:</v:String>
+
+    <!--НАСТРОЙКИ-->
+    <v:String x:Key="AppLanguage">App Language:</v:String>
+    <v:String x:Key="AppTheme">App Theme:</v:String>
+    <!--Темы-->
+    <v:String x:Key="StandartTheme">Lilac</v:String>
+    <v:String x:Key="GreyTheme">Turquoise</v:String>
+    <v:String x:Key="DarkTheme">Steel</v:String>
+
+    <!--О ПРИЛОЖЕНИИ-->
+    <v:String x:Key="AboutAppText">FlowerPot is a WPF application for ordering flowers online.</v:String>
+    <v:String x:Key="VersionNDeveloper">Developer: Artem Elizabeth. Application version: 1.0</v:String>
+
+    <!--ДОБАВИТЬ ТОВАР-->
+    <v:String x:Key="AddProduct">ADD PRODUCT</v:String>
+
+    <v:String x:Key="FullNameSTR">Full name</v:String>
+    <v:String x:Key="ShortNameSTR">Short name</v:String>
+    <v:String x:Key="CostSTR">Cost</v:String>
+    <v:String x:Key="AmountSTR">Amount</v:String>
+    <v:String x:Key="DescriptionSTR">Description</v:String>
+    <v:String x:Key="ClearFormSTR">Clear form</v:String>
+    <v:String x:Key="AddPictureSTR">Add picture</v:String>
+    <v:String x:Key="AddModelSTR">Add 3D-model</v:String>
+    <v:String x:Key="EditBTTN">Edit</v:String>
+    <v:String x:Key="DeleteBTTN">Delete</v:String>
+    <v:String x:Key="Stylish">Style</v:String>
+
+    <v:String x:Key="CancelBTTN">Cancel</v:String>
+    <v:String x:Key="OkBTTN">Ok</v:String>
+
+    <!--Цвета-->
+    <v:String x:Key="ColorRed">Red</v:String>
+    <v:String x:Key="ColorOrange">Orange</v:String>
+    <v:String x:Key="ColorYellow">Yellow</v:String>
+    <v:String x:Key="ColorCyan">Cyan</v:String>
+    <v:String x:Key="ColorBlue">Blue</v:String>
+    <v:String x:Key="ColorViolet">Violet</v:String>
+    <v:String x:Key="ColorPink">Pink</v:String>
+
+    <!--Категории-->
+    <v:String x:Key="Houseplants">Houseplants</v:String>
+    <v:String x:Key="DriedF">Dried</v:String>
+    <v:String x:Key="Ferns">Ferns</v:String>
+    <v:String x:Key="Succulents">Succulents</v:String>
+    <v:String x:Key="Cactus">Cactus</v:String>
+    <v:String x:Key="PalmF">Palm</v:String>
+    <v:String x:Key="Bouquet">Bouquet</v:String>
+
+    <!-- ПОДРОБНАЯ ИНФОРМАЦИЯ О ТОВАРЕ-->
+    <v:String x:Key="Infoemation">INFORMATION</v:String>
+    <v:String x:Key="CountStock">In stock:</v:String>
+    <v:String x:Key="Category">Category:</v:String>
+    <v:String x:Key="PriceByOne">Price per piece:</v:String>
+    <v:String x:Key="Color">Color:</v:String>
+    <v:String x:Key="SetAmount">Select quantity:</v:String>
+    
+    <!--УДАЛИТЬ ТОВАР-->
+    <v:String x:Key="DelProduct">DEL PRODUCT</v:String>
+
+    <!--ИЗМЕНИТЬ ТОВАР-->
+    <v:String x:Key="SortProduct">SORT PRODUCT</v:String>
+
+    <!--УПРАВЛЕНИЕ-->
+
+    <!--КАТАЛОГ-->
+    <v:String x:Key="AboutProduct">More about</v:String>
+
+    <!--Сообщения об ошибках-->
+    <v:String x:Key="Mes1">Not all fields are filled!</v:String>
+    <v:String x:Key="Mes666">Неверный формат файла!</v:String>
+
+
+    <!--Сообщения об ошибках (РЕГИСТРАЦИЯ)-->
+    <v:String x:Key="Mes0">The specified E-mail is already in use!</v:String>
+    <v:String x:Key="Mes2">Password length is less than 8 characters!</v:String>
+    <v:String x:Key="Mes3">Passwords do not match!</v:String>
+    <v:String x:Key="Mes4">The user with the given login already exists!</v:String>
+    <v:String x:Key="Mes5">The specified phone number is already in use!</v:String>
+    <v:String x:Key="Mes6">Name data entered incorrectly!</v:String>
+    <v:String x:Key="Mes7">Phone number entered is incorrect!</v:String>
+    <v:String x:Key="Mes8">Email number entered is incorrect!</v:String>
+    
+    <!--Сообщения об ошибках (АВТОРИЗАЦИЯ)-->
+    <v:String x:Key="Mes9">The data is entered incorrectly or the user does not exist!</v:String>
+    
+    <!--Сообщения об ошибках (ДОБАВЛЕНИЕ ПРОДУКТА)-->
+    <v:String x:Key="Mes10">Name entered incorrectly!</v:String>
+    <v:String x:Key="Mes11">Number expected!</v:String>
+    <v:String x:Key="Mes12">The MAX number of characters has been exceeded!</v:String>
+    <v:String x:Key="Mes13">The product name is already in the database!</v:String>
+
+    <v:String x:Key="Mes22012003">Success!</v:String>
+
+</ResourceDictionary>
