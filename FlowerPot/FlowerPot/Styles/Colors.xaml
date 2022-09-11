@@ -1,0 +1,29 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Color x:Key="BackgroundColor1">#FF23183C</Color>
+    <Color x:Key="BackgroundColor2">#FF5C468B</Color>
+
+    <Color x:Key="BackgroundColor3">Black</Color>
+    <Color x:Key="BackgroundColor4">#FF323232</Color>
+
+    <Color x:Key="BackgroundColor5">#99eac8</Color>
+    <Color x:Key="BackgroundColor6">#7ec7e4</Color>
+
+
+
+    <Color x:Key="PanelColor30">#4CACA0C9</Color>    <!--White 30%-->
+    <Color x:Key="PanelColor20">#33ACA0C9</Color>    <!--White 20%-->
+    <Color x:Key="PanelColor10">#19ACA0C9</Color>    <!--White 10%-->
+
+    <SolidColorBrush x:Key="MenuOpened1">#FF574F6C</SolidColorBrush>
+    <SolidColorBrush x:Key="MenuClosed2">#19ACA0C9</SolidColorBrush>
+
+    <SolidColorBrush x:Key="MenuOpened3">#FF2E2E2E</SolidColorBrush>
+    <SolidColorBrush x:Key="MenuClosed4">#99000000</SolidColorBrush>
+
+    <SolidColorBrush x:Key="MenuOpened5">#FF3d3d3d</SolidColorBrush>
+    <SolidColorBrush x:Key="MenuClosed6">#19ACA0C9</SolidColorBrush>
+
+
+</ResourceDictionary>

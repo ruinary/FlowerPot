@@ -1,0 +1,101 @@
+﻿<Page x:Class="FlowerPot.Views.Pages.OrdersInfo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FlowerPot"
+      xmlns:col="clr-namespace:System.Collections;assembly=mscorlib" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="OrdersInfo"  Style="{DynamicResource PageBackground}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90px"/>
+            <RowDefinition Height="13*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" HorizontalAlignment="Left">
+                <Viewbox HorizontalAlignment="Left">
+                    <TextBlock Text="{DynamicResource Orders}"  Margin="10,5,0,0"  FontSize="80" FontStyle="Normal" FontWeight="Normal" Foreground="White" FontFamily="Bahnschrift Condensed" HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
+                </Viewbox>
+            </Grid>
+            <Grid Grid.Column="1" HorizontalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" >
+                    <TextBox x:Name="search"  VerticalAlignment="Center" Height="29"  Cursor="IBeam" MaxLines="1" SelectionBrush="#7F572C81" Foreground="White" CaretBrush="White" BorderBrush="#89FFFFFF" FontSize="15" Margin="10,0,0,0" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2"/>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Viewbox HorizontalAlignment="Right">
+                        <Button VerticalAlignment="Stretch" Foreground="#FFBFBFBF" Background="#33FFFFFF" BorderBrush="{x:Null}" Cursor="Hand" Click="Button_Click_3" Margin="5,0,5,0">
+                            <materialDesign:PackIcon Kind="Search"/>
+                        </Button>
+                    </Viewbox>
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Viewbox HorizontalAlignment="Right">
+                    <Button VerticalAlignment="Stretch" Foreground="#FFBFBFBF" Background="#33FFFFFF" BorderBrush="{x:Null}" Cursor="Hand"  Margin="5,0,5,0" Click="Button_Click_SortByNum">
+                        <materialDesign:PackIcon Kind="SortNumericAscending"/>
+                    </Button>
+                </Viewbox>
+            </Grid>
+            <Grid Grid.Column="3">
+                <Viewbox HorizontalAlignment="Right">
+                    <Button VerticalAlignment="Stretch" Foreground="#FFBFBFBF" Background="#33FFFFFF" BorderBrush="{x:Null}" Cursor="Hand"  Margin="5,0,5,0" Click="Button_Click_SortByName">
+                        <materialDesign:PackIcon Kind="Sort"/>
+                    </Button>
+                </Viewbox>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2">
+            <DataGrid x:Name="OrdersTable" IsReadOnly="True" CanUserAddRows="False" CanUserDeleteRows="False" ItemsSource="{Binding}" AutoGenerateColumns="False" Margin="10,10,10,10" BorderBrush="#199686CD" Background="#33FFFFFF" Foreground="White" FontWeight="Normal" Visibility="Visible" HeadersVisibility="Column" ClipboardCopyMode="ExcludeHeader" FontFamily="Bahnschrift Condensed" FontSize="20" Grid.Row="1">
+                <DataGrid.HorizontalGridLinesBrush>
+                    <SolidColorBrush Color="#FFF4F3FA" Opacity="0.2"/>
+                </DataGrid.HorizontalGridLinesBrush>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Path=id_order,UpdateSourceTrigger=PropertyChanged}">
+                        <DataGridTextColumn.Header>
+                            <TextBlock  Foreground="White" Text="{DynamicResource numOrder}" />
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding Path=СonfirmOrder.Products.name_product,UpdateSourceTrigger=PropertyChanged}">
+                        <DataGridTextColumn.Header>
+                            <TextBlock  Foreground="White" Text="{DynamicResource nameFlower}"/>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding Path=СonfirmOrder.total_price,UpdateSourceTrigger=PropertyChanged, StringFormat={}\{0:n2\}BYN}">
+                        <DataGridTextColumn.Header>
+                            <TextBlock  Foreground="White" Text="{DynamicResource priceOrder}" />
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding Path=СonfirmOrder.total_amount,UpdateSourceTrigger=PropertyChanged}">
+                        <DataGridTextColumn.Header>
+                            <TextBlock  Foreground="White" Text="{DynamicResource countOrder}" />
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding Path=now_date,UpdateSourceTrigger=PropertyChanged, StringFormat=dd.MM.yyyy}">
+                        <DataGridTextColumn.Header>
+                            <TextBlock  Foreground="White" Text="{DynamicResource date}" />
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding Path=OrderStatus.type_of_status,UpdateSourceTrigger=PropertyChanged}">
+                        <DataGridTextColumn.Header>
+                            <TextBlock  Foreground="White" Text="{DynamicResource orderStatus}" />
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</Page>

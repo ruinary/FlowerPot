@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="FlowerPot.Views.UC.WinBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FlowerPot.Views.UC"
+              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="25" d:DesignWidth="755">
+    <Grid>
+        <Border Background="#FF2D2D30">
+            <Button x:Name="closeButton" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" HorizontalAlignment="Right" Foreground="White" Height="Auto" Width="45" Command="{Binding close}">
+                <materialDesign:PackIcon Kind="Close"/>
+            </Button>
+        </Border>
+    </Grid>
+</UserControl>

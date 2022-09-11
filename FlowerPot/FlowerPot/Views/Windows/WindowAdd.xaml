@@ -1,0 +1,104 @@
+﻿<Window x:Class="FlowerPot.Views.Windows.WindowAdd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlowerPot.Views.Windows"
+        mc:Ignorable="d"
+        Title="{DynamicResource AddProduct}" Height="430" Width="400"  WindowStyle="None" ResizeMode="NoResize" ShowInTaskbar="False" HorizontalAlignment="Center" VerticalAlignment="Center" >
+
+    <Grid Style="{DynamicResource WinThemes}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25px"/>
+            <RowDefinition Height="59*"/>
+            <RowDefinition Height="59*"/>
+            <RowDefinition Height="71*"/>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="65*"/>
+            <RowDefinition Height="65*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="0,0,0,64" Grid.RowSpan="2">
+            <Border Background="#FF2D2D30" RenderTransformOrigin="0.5,0.5" MouseLeftButtonDown="Border_MouseLeftButtonDown" Height="26" VerticalAlignment="Stretch"/>
+        </Grid>
+        <Grid Grid.Row="1" Margin="0,0,0,59" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="35*"/>
+                <ColumnDefinition Width="35*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <TextBox x:Name="ShortNameTB" Height="23" Margin="10,0,10,0" TextWrapping="Wrap" Text="{DynamicResource ShortNameSTR}" VerticalAlignment="Center" CaretBrush="White" Foreground="White" SelectionBrush="#7F572C81"  BorderBrush="#89FFFFFF"/>
+            </Grid>
+            <Grid Grid.Column="1">
+                <TextBox x:Name="FullNameTB" Height="23" Margin="10,0,10,0" TextWrapping="Wrap" Text="{DynamicResource FullNameSTR}" VerticalAlignment="Center" Grid.Column="1" CaretBrush="White" SelectionBrush="#7F572C81" Foreground="White" BorderBrush="#89FFFFFF"/>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2" Margin="0,0,0,70" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="35*"/>
+                <ColumnDefinition Width="35*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <TextBox x:Name="CostTB" Height="23" Margin="10,0,10,0" TextWrapping="Wrap" Text="{DynamicResource CostSTR}" VerticalAlignment="Center" Foreground="White" SelectionBrush="#7F572C81" CaretBrush="White" BorderBrush="#89FFFFFF" Cursor="IBeam"/>
+            </Grid>
+            <Grid Grid.Column="1">
+                <ComboBox x:Name="ColorCB" Margin="10,0,10,0" Height="22" VerticalAlignment="Center"  SelectedIndex="0" BorderBrush="#89FFFFFF" Foreground="White">
+                    <ComboBoxItem Content="{DynamicResource ColorRed}" Foreground="#FF818181" IsSelected="True"/>
+                    <ComboBoxItem Content="{DynamicResource ColorOrange}" Foreground="#FF818181"/>
+                    <ComboBoxItem Content="{DynamicResource ColorYellow}" Foreground="#FF818181"/>
+                    <ComboBoxItem Content="{DynamicResource ColorCyan}" Foreground="#FF818181"/>
+                    <ComboBoxItem Content="{DynamicResource ColorBlue}" Foreground="#FF818181"/>
+                    <ComboBoxItem Content="{DynamicResource ColorViolet}" Foreground="#FF818181"/>
+                    <ComboBoxItem Content="{DynamicResource ColorPink}" Foreground="#FF818181"/>
+                </ComboBox>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="3" Margin="0,0,0,70" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="35*"/>
+                <ColumnDefinition Width="35*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <TextBox x:Name="AmountTB" Height="23" Margin="10,0,10,0" TextWrapping="Wrap" Text="{DynamicResource AmountSTR}" VerticalAlignment="Center" Foreground="White" SelectionBrush="#7F572C81" CaretBrush="White" BorderBrush="#89FFFFFF" Cursor="IBeam"/>
+            </Grid>
+            <Grid Grid.Column="1">
+                <ComboBox x:Name="CategoryCB" Margin="10,0,10,0" Height="22" VerticalAlignment="Center" SelectedIndex="0" BorderBrush="#89FFFFFF" Foreground="White">
+                    <ComboBoxItem Content="{DynamicResource Houseplants}" Foreground="#FF818181" IsSelected="True"/>
+                    <ComboBoxItem Content="{DynamicResource DriedF}" Foreground="#FF818181"/>
+                    <ComboBoxItem Content="{DynamicResource Ferns}" Foreground="#FF818181"/>
+                    <ComboBoxItem Content="{DynamicResource Succulents}" Foreground="#FF818181"/>
+                    <ComboBoxItem Content="{DynamicResource Cactus}" Foreground="#FF818181"/>
+                    <ComboBoxItem Content="{DynamicResource PalmF}" Foreground="#FF818181"/>
+                    <ComboBoxItem Content="{DynamicResource Bouquet}" Foreground="#FF818181"/>
+                </ComboBox>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="4">
+            <TextBox x:Name="DescriptionTB" Margin="10,10,10,10" TextWrapping="Wrap" Text="{DynamicResource DescriptionSTR}" CaretBrush="White" SelectionBrush="#7F572C81" Foreground="White" BorderBrush="#89FFFFFF" Cursor="IBeam" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Row="5" Margin="0,0,0,70" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Button x:Name="AddPictureBTTN" Content="{DynamicResource AddPictureSTR}" Margin="10,0,10,0" FontSize="10" Height="29" VerticalAlignment="Stretch" Foreground="#FFBFBFBF" Background="#33FFFFFF" BorderBrush="{x:Null}" Click="AddPictureBTTN_Click" Cursor="Hand"/>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Button x:Name="AddModelBTTN" Content="{DynamicResource AddModelSTR}" Margin="10,0,10,0" FontSize="10" Height="29" VerticalAlignment="Stretch" Foreground="#FFBFBFBF" Background="#33FFFFFF" BorderBrush="{x:Null}" Click="AddModelBTTN_Click" Cursor="Hand"/>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="6" Margin="0,5,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="12*"/>
+                <ColumnDefinition Width="13*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Button x:Name="OkBTTNADD" Content="{DynamicResource OkBTTN}" Margin="10,0,10,0" FontSize="10" Height="29" VerticalAlignment="Center" Foreground="#FFBFBFBF" Background="#33FFFFFF" BorderBrush="{x:Null}" Click="OkBTTNADD_Click" Cursor="Hand"/>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Button x:Name="CancelBTTNADD" Content="{DynamicResource CancelBTTN}" Margin="10,0,10,0" FontSize="10" Height="29" Click="CancelBTTNADD_Click" Foreground="#FFBFBFBF" Background="#33FFFFFF" BorderBrush="{x:Null}" VerticalAlignment="Center"/>
+            </Grid>
+
+        </Grid>
+    </Grid>
+</Window>

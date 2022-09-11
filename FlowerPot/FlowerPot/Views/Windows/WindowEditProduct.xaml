@@ -1,0 +1,301 @@
+﻿<Window x:Class="FlowerPot.Views.Windows.WindowEditProduct"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:uc="clr-namespace:FlowerPot.Views.UC"
+        xmlns:local="clr-namespace:FlowerPot.Views.Windows" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="{DynamicResource AddProduct}" Height="430" Width="400"  WindowStyle="None" ResizeMode="NoResize" ShowInTaskbar="False" HorizontalAlignment="Center" VerticalAlignment="Center" >
+    <Grid Style="{DynamicResource WinThemes}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25px"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <uc:WinBar MouseLeftButtonDown="Border_MouseLeftButtonDown"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="3*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Viewbox HorizontalAlignment="Center" VerticalAlignment="Center" Margin="26,0" Grid.RowSpan="2">
+                            <Button Style="{DynamicResource EditImgUser}" Click="Button_Click" >
+                                <Button.Background>
+                                    <ImageBrush ImageSource="{Binding Path=ImageAdress, UpdateSourceTrigger=PropertyChanged}" Stretch="UniformToFill"/>
+                                </Button.Background>
+                            </Button>
+                        </Viewbox>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Viewbox>
+                            <Button VerticalAlignment="Stretch" Foreground="#FFBFBFBF" Background="#33FFFFFF" BorderBrush="{x:Null}" Cursor="Hand" HorizontalAlignment="Stretch" Content="{DynamicResource AddModelSTR}" Click="Button_Click_1"/>
+                        </Viewbox>
+                    </Grid>
+                </Grid>
+                
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <!-- NAME -->
+                    <Grid Grid.Row="0" x:Name="curName">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0">
+                            <Viewbox>
+                                <TextBlock Text="{Binding Path=Name,UpdateSourceTrigger=PropertyChanged}" FontStyle="Normal" FontWeight="Normal" Foreground="White" FontFamily="Bahnschrift Condensed" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            </Viewbox>
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <Viewbox>
+                                <Button VerticalAlignment="Stretch" Foreground="#FFBFBFBF" Background="#33FFFFFF" BorderBrush="{x:Null}" Cursor="Hand" HorizontalAlignment="Stretch" Width="45" Margin="5,0,5,0" Click="Button_Click_5">
+                                    <materialDesign:PackIcon Kind="Edit"/>
+                                </Button>
+                            </Viewbox>
+                        </Grid>
+                    </Grid>
+                    <!-- NAME TO EDIT-->
+                    <Grid Grid.Row="0" x:Name="editName" Visibility="Hidden">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0">
+                            <Viewbox>
+                                <TextBox x:Name="editedName" Text="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}" FontStyle="Normal" FontWeight="Normal" Foreground="White" FontFamily="Bahnschrift Condensed" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            </Viewbox>
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <Viewbox>
+                                <Button VerticalAlignment="Stretch" Foreground="#FFBFBFBF" Background="#33FFFFFF" BorderBrush="{x:Null}" Cursor="Hand" HorizontalAlignment="Stretch" Width="45" Margin="5,0,5,0" Click="Button_Click_ConfName">
+                                    <materialDesign:PackIcon Kind="Check"/>
+                                </Button>
+                            </Viewbox>
+                        </Grid>
+                    </Grid>
+                    <!-- FULLNAME -->
+                    <Grid Grid.Row="1" x:Name="curFullName">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0">
+                            <Viewbox>
+                                <TextBlock Text="{Binding Path=FullName,UpdateSourceTrigger=PropertyChanged}" FontStyle="Normal" FontWeight="Normal" Foreground="White" FontFamily="Bahnschrift Condensed" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            </Viewbox>
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <Viewbox>
+                                <Button VerticalAlignment="Stretch" Foreground="#FFBFBFBF" Background="#33FFFFFF" BorderBrush="{x:Null}" Cursor="Hand" HorizontalAlignment="Stretch" Width="45" Margin="5,0,5,0" Click="Button_Click_6">
+                                    <materialDesign:PackIcon Kind="Edit"/>
+                                </Button>
+                            </Viewbox>
+                        </Grid>
+                    </Grid>
+                    <!-- FULLNAME TO EDIT-->
+                    <Grid Grid.Row="1" x:Name="editFullName" Visibility="Hidden">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0">
+                            <Viewbox>
+                                <TextBox x:Name="editedFullName" Text="{Binding Path=FullName, UpdateSourceTrigger=PropertyChanged}" FontStyle="Normal" FontWeight="Normal" Foreground="White" FontFamily="Bahnschrift Condensed" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            </Viewbox>
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <Viewbox>
+                                <Button VerticalAlignment="Stretch" Foreground="#FFBFBFBF" Background="#33FFFFFF" BorderBrush="{x:Null}" Cursor="Hand" HorizontalAlignment="Stretch" Width="45" Margin="5,0,5,0" Click="Button_Click_ConfFullName">
+                                    <materialDesign:PackIcon Kind="Check"/>
+                                </Button>
+                            </Viewbox>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <!-- DESCRIPTION -->
+                <Grid Grid.Row="1" x:Name="curDescr">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="7*"/>
+                        <ColumnDefinition  Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <TextBlock Text="{Binding Path=Description,UpdateSourceTrigger=PropertyChanged}" FontStyle="Normal" TextWrapping="Wrap" FontWeight="Normal" Foreground="White" FontFamily="Bahnschrift Condensed" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18"/>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Viewbox>
+                            <Button VerticalAlignment="Stretch" Foreground="#FFBFBFBF" Background="#33FFFFFF" BorderBrush="{x:Null}" Cursor="Hand" HorizontalAlignment="Stretch" Width="45" Margin="5,0,5,0" Click="Button_Click_3">
+                                <materialDesign:PackIcon Kind="Edit"/>
+                            </Button>
+                        </Viewbox>
+                    </Grid>
+                </Grid>
+                <!-- DESCRIPTION TO EDIT -->
+                <Grid Grid.Row="1" x:Name="editDescr" Visibility="Hidden" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="7*"/>
+                        <ColumnDefinition  Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Viewbox>
+                            <TextBox x:Name="editedDescr" TextWrapping="Wrap" Text="{Binding Path=Description,UpdateSourceTrigger=PropertyChanged}" FontStyle="Normal" FontWeight="Normal" Foreground="White" FontFamily="Bahnschrift Condensed" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        </Viewbox>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Viewbox>
+                            <Button VerticalAlignment="Stretch" Foreground="#FFBFBFBF" Background="#33FFFFFF" BorderBrush="{x:Null}" Cursor="Hand" HorizontalAlignment="Stretch" Width="45" Margin="5,0,5,0" Click="Button_Click_ConfDescr">
+                                <materialDesign:PackIcon Kind="Check"/>
+                            </Button>
+                        </Viewbox>
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <!-- AMOUNT -->
+                    <Grid Grid.Row="0" Grid.Column="0" x:Name="curAmount">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30*"/>
+                            <ColumnDefinition Width="10*"/>
+                            <ColumnDefinition Width="10*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0">
+                            <TextBlock Text="В наличии:" FontSize="25" FontStyle="Normal" FontWeight="Normal" Foreground="White" FontFamily="Bahnschrift Condensed" Margin="5,0,0,0" VerticalAlignment="Center" Height="30" HorizontalAlignment="Center"/>
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <TextBlock x:Name="countStockFlower" Text="{Binding Path=Amount,UpdateSourceTrigger=PropertyChanged}" FontStyle="Normal" FontWeight="Normal" Foreground="White" FontSize="25" FontFamily="Bahnschrift Condensed" RenderTransformOrigin="0.574,0.5"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                        <Grid Grid.Column="2">
+                            <Viewbox>
+                                <Button VerticalAlignment="Stretch" Foreground="#FFBFBFBF" Background="#33FFFFFF" BorderBrush="{x:Null}" Cursor="Hand" HorizontalAlignment="Stretch" Width="45" Margin="5,0,5,0" Click="Button_Click_2">
+                                    <materialDesign:PackIcon Kind="Edit"/>
+                                </Button>
+                            </Viewbox>
+                        </Grid>
+                    </Grid>
+                    <!-- AMOUNT TO EDIT -->
+                    <Grid Grid.Row="0" Grid.Column="0" x:Name="editAmount" Visibility="Hidden">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30*"/>
+                            <ColumnDefinition Width="10*"/>
+                            <ColumnDefinition Width="10*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0">
+                            <TextBlock Text="В наличии:" FontSize="25" FontStyle="Normal" FontWeight="Normal" Foreground="White" FontFamily="Bahnschrift Condensed" Margin="5,0,0,0" VerticalAlignment="Center" Height="30" HorizontalAlignment="Center"/>
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <TextBox x:Name="editedAmount" Text="{Binding Path=Amount,UpdateSourceTrigger=PropertyChanged}" FontStyle="Normal" FontWeight="Normal" Foreground="White" FontSize="25" FontFamily="Bahnschrift Condensed" RenderTransformOrigin="0.574,0.5"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                        <Grid Grid.Column="2">
+                            <Viewbox>
+                                <Button VerticalAlignment="Stretch" Foreground="#FFBFBFBF" Background="#33FFFFFF" BorderBrush="{x:Null}" Cursor="Hand" HorizontalAlignment="Stretch" Width="45" Margin="5,0,5,0" Click="Button_Click_ConfAmount">
+                                    <materialDesign:PackIcon Kind="Check"/>
+                                </Button>
+                            </Viewbox>
+                        </Grid>
+                    </Grid>
+                    <!-- COST -->
+                    <Grid Grid.Row="0" Grid.Column="1" x:Name="curCost">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20*"/>
+                            <ColumnDefinition Width="20*"/>
+                            <ColumnDefinition Width="10*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="1">
+                            <TextBlock Text="{Binding Path=Cost,UpdateSourceTrigger=PropertyChanged, StringFormat={}\{0:n2\}BYN}" FontStyle="Normal" FontWeight="Normal" Foreground="White" FontSize="25" FontFamily="Bahnschrift Condensed" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Grid>
+                        <Grid Grid.Column="2">
+                            <Viewbox>
+                                <Button VerticalAlignment="Stretch" Foreground="#FFBFBFBF" Background="#33FFFFFF" BorderBrush="{x:Null}" Cursor="Hand" HorizontalAlignment="Stretch" Width="45" Margin="5,0,5,0" Click="Button_Click_4">
+                                    <materialDesign:PackIcon Kind="Edit"/>
+                                </Button>
+                            </Viewbox>
+                        </Grid>
+                        <Grid Grid.Column="0">
+                            <Viewbox>
+                                <TextBlock Text="Цена: " FontSize="25" FontStyle="Normal" FontWeight="Normal" Foreground="White" FontFamily="Bahnschrift Condensed" Margin="5,0,0,0" VerticalAlignment="Center" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
+                            </Viewbox>
+                        </Grid>
+                    </Grid>
+                    <!-- COST TO EDIT -->
+                    <Grid Grid.Row="0" Grid.Column="1" x:Name="editCost" Visibility="Hidden">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20*"/>
+                            <ColumnDefinition Width="20*"/>
+                            <ColumnDefinition Width="10*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="1">
+                            <TextBox x:Name="editedCost" Text="{Binding Path=Cost,UpdateSourceTrigger=PropertyChanged}" FontStyle="Normal" FontWeight="Normal" Foreground="White" FontSize="25" FontFamily="Bahnschrift Condensed" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Grid>
+                        <Grid Grid.Column="2">
+                            <Viewbox>
+                                <Button VerticalAlignment="Stretch" Foreground="#FFBFBFBF" Background="#33FFFFFF" BorderBrush="{x:Null}" Cursor="Hand" HorizontalAlignment="Stretch" Width="45" Margin="5,0,5,0" Click="Button_Click_ConfCost">
+                                    <materialDesign:PackIcon Kind="Check"/>
+                                </Button>
+                            </Viewbox>
+                        </Grid>
+                        <Grid Grid.Column="0">
+                            <Viewbox>
+                                <TextBlock Text="Цена: " FontSize="25" FontStyle="Normal" FontWeight="Normal" Foreground="White" FontFamily="Bahnschrift Condensed" Margin="5,0,0,0" VerticalAlignment="Center" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
+                            </Viewbox>
+                        </Grid>
+                    </Grid>
+                    <!-- TYPE FLOWER -->
+                    <Grid Grid.Row="1" Grid.Column="0">
+                        <ComboBox x:Name="CategoryCB" Margin="10,0,10,0" Height="22" VerticalAlignment="Center" SelectedIndex="0" BorderBrush="#89FFFFFF" Foreground="White" SelectionChanged="CategoryCB_SelectionChanged">
+                            <ComboBoxItem Content="{DynamicResource Houseplants}" Foreground="#FF818181" IsSelected="True"/>
+                            <ComboBoxItem Content="{DynamicResource DriedF}" Foreground="#FF818181"/>
+                            <ComboBoxItem Content="{DynamicResource Ferns}" Foreground="#FF818181"/>
+                            <ComboBoxItem Content="{DynamicResource Succulents}" Foreground="#FF818181"/>
+                            <ComboBoxItem Content="{DynamicResource Cactus}" Foreground="#FF818181"/>
+                            <ComboBoxItem Content="{DynamicResource PalmF}" Foreground="#FF818181"/>
+                            <ComboBoxItem Content="{DynamicResource Bouquet}" Foreground="#FF818181"/>
+                        </ComboBox>
+                    </Grid>
+                    <!-- TYPE COLOR -->
+                    <Grid Grid.Row="1" Grid.Column="1">
+                        <ComboBox x:Name="ColorCB" Margin="10,0,10,0" Height="22" VerticalAlignment="Center"  SelectedIndex="0" BorderBrush="#89FFFFFF" Foreground="White" SelectionChanged="ColorCB_SelectionChanged">
+                            <ComboBoxItem Content="{DynamicResource ColorRed}" Foreground="#FF818181" IsSelected="True"/>
+                            <ComboBoxItem Content="{DynamicResource ColorOrange}" Foreground="#FF818181"/>
+                            <ComboBoxItem Content="{DynamicResource ColorYellow}" Foreground="#FF818181"/>
+                            <ComboBoxItem Content="{DynamicResource ColorCyan}" Foreground="#FF818181"/>
+                            <ComboBoxItem Content="{DynamicResource ColorBlue}" Foreground="#FF818181"/>
+                            <ComboBoxItem Content="{DynamicResource ColorViolet}" Foreground="#FF818181"/>
+                            <ComboBoxItem Content="{DynamicResource ColorPink}" Foreground="#FF818181"/>
+                        </ComboBox>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,125 @@
+﻿<Page x:Class="FlowerPot.Views.Pages.Cart"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FlowerPot"
+      xmlns:col="clr-namespace:System.Collections;assembly=mscorlib" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Basket"   Style="{DynamicResource PageBackground}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90px"/>
+            <RowDefinition Height="65*"/>
+            <RowDefinition Height="50px"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Viewbox HorizontalAlignment="Left">
+                    <TextBlock Text="{DynamicResource Basket}" Margin="10,5,0,0" FontSize="80" FontStyle="Normal" FontWeight="Normal" Foreground="White" FontFamily="Bahnschrift Condensed" HorizontalAlignment="Left"/>
+                </Viewbox>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" >
+                    <TextBox x:Name="search"  VerticalAlignment="Center" Height="29"  Cursor="IBeam" MaxLines="1" SelectionBrush="#7F572C81" Foreground="White" CaretBrush="White" BorderBrush="#89FFFFFF" FontSize="15" Margin="10,0,0,0" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2"/>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Button VerticalAlignment="Stretch" Foreground="#FFBFBFBF" Background="#33FFFFFF" BorderBrush="{x:Null}" Cursor="Hand" Click="Button_Click_3" HorizontalAlignment="Stretch" Width="45" Margin="5,0,5,0">
+                        <materialDesign:PackIcon Kind="Search"/>
+                    </Button>
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Button VerticalAlignment="Stretch" Foreground="#FFBFBFBF" Background="#33FFFFFF" BorderBrush="{x:Null}" Cursor="Hand" Click="Button_Click_ClearAll" HorizontalAlignment="Stretch" Width="45" Margin="5,0,5,0">
+                    <materialDesign:PackIcon Kind="FileDocumentRemove"/>
+                </Button>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid Grid.Column="0" Margin="0,0,10,0">
+                <DataGrid x:Name="BasketTable" IsReadOnly="True" CanUserAddRows="False" CanUserDeleteRows="False"  Margin="10,10,0,10" ItemsSource="{Binding}" AutoGenerateColumns="False" BorderBrush="#199686CD" Background="#33FFFFFF" Foreground="White" FontWeight="Normal" Visibility="Visible" HeadersVisibility="Column" ClipboardCopyMode="ExcludeHeader" FontFamily="Bahnschrift Condensed" FontSize="20" >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn  Width="Auto" Foreground="White" CanUserReorder="False" Binding="{Binding Path=id_cart,UpdateSourceTrigger=PropertyChanged}">
+                            <DataGridTextColumn.Header>
+                                <TextBlock  Foreground="White" Text="{DynamicResource numOrder}" />
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Width="Auto" Foreground="White" CanUserReorder="False"  Binding="{Binding Path=Products.name_product,UpdateSourceTrigger=PropertyChanged}">
+                            <DataGridTextColumn.Header>
+                                <TextBlock  Foreground="White" Text="{DynamicResource nameFlower}" />
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Width="Auto" Foreground="White" CanUserReorder="False"  Binding="{Binding Path=total_amount,UpdateSourceTrigger=PropertyChanged}">
+                            <DataGridTextColumn.Header>
+                                <TextBlock Foreground="White" Text="{DynamicResource countOrder}" />
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Background="#33FFFFFF" BorderBrush="{x:Null}" Click="RemoveAmount" MinWidth="5" MinHeight="5">
+                                        -
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Background="#33FFFFFF" BorderBrush="{x:Null}" Click="AddAmount"  MinWidth="5" MinHeight="5">
+                                        +
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn x:Name="tablePrice" Width="Auto" Foreground="White" CanUserReorder="False"  Binding="{Binding Path=total_price,UpdateSourceTrigger=PropertyChanged, StringFormat={}\{0:n2\}BYN}">
+                            <DataGridTextColumn.Header>
+                                <TextBlock  Foreground="White" Text="{DynamicResource priceOrder}" />
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Background="#33FFFFFF" BorderBrush="{x:Null}" Click="Del_Click" MinWidth="5" MinHeight="5">
+                                        <materialDesign:PackIcon Kind="Close"/>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Viewbox  HorizontalAlignment="Stretch" Grid.RowSpan="1" VerticalAlignment="Center">
+                    <TextBlock Text="{DynamicResource totalPayable}" Margin="4,0,0,0" FontSize="40" FontStyle="Normal" FontWeight="Normal" Foreground="#7FFFFFFF" FontFamily="Bahnschrift Condensed" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+                </Viewbox>
+            </Grid>
+            <Grid Grid.Column="1" VerticalAlignment="Center">
+                <Viewbox HorizontalAlignment="Left">
+                    <TextBlock x:Name="TotalPrice" FontStyle="Normal" FontWeight="Normal" Foreground="#7FFFFFFF" FontFamily="Bahnschrift Condensed" HorizontalAlignment="Stretch" Text="{Binding }" VerticalAlignment="Center"/>
+                </Viewbox>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Button x:Name="ButtonSearch_Copy4" Content="{DynamicResource CONF}" Margin="5,0,5,0" FontWeight="Normal" Foreground="#FF707070" BorderBrush="#00000000" Background="#99FFFFFF" IsDefault="True" FontStyle="Normal" FontSize="25" FontFamily="Bahnschrift Condensed" Height="35" VerticalAlignment="Center" Click="ButtonConfirmPayment_Click"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,30 @@
+﻿<Window x:Class="FlowerPot.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlowerPot"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:uc="clr-namespace:FlowerPot.Views.UC"
+        Title="FlowerPot" Height="649" Width="1000" WindowStyle="None"  AllowsTransparency="True" WindowState="Normal"  MinWidth="1000" MinHeight="649">
+    <WindowChrome.WindowChrome>
+        <WindowChrome ResizeBorderThickness="5"/>
+    </WindowChrome.WindowChrome>
+    <Grid Style="{DynamicResource WinThemes}">
+        <Grid  Height="60" VerticalAlignment="Top" Style="{DynamicResource Panels}" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="298*"/>
+                <ColumnDefinition Width="387*"/>
+                <ColumnDefinition Width="315*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.Effect>
+                <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FFACACAC"/>
+            </Grid.Effect>
+            <Grid Grid.Column="1" HorizontalAlignment="Center">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="80" Foreground="#59FFFFFF" FontFamily="Bahnschrift Condensed" Margin="0,-13,0,0" Grid.Column="1">FLOWER POT</TextBlock>
+            </Grid>
+        </Grid>
+        <uc:Controls/>
+    </Grid>
+</Window>
